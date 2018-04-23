@@ -1,0 +1,8 @@
+vutisch_blog:
+    resource: "@VutischBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+
+

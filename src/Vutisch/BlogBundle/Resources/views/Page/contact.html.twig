@@ -1,0 +1,34 @@
+{% extends "@VutischBlog/loyout.html.twig" %}
+
+
+
+{% block title %}contact{% endblock %}
+
+    {% block body %}
+        <header>
+            <h1> contact symblog</h1>
+        </header>
+        {% for flashMessage in app.session.flashbag.get('blogger-notice') %}
+            <div class="blogger-notice">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+
+
+        {{ form_start(form, { 'action': path('vutisch_blog_contact'), 'method': 'POST', 'attr': {'class': 'blogger','novalidate':'novalidate'}, }) }}
+        {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.subject) }}
+        {{ form_row(form.body) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Submit" />
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="UTF-8"/>
+    <title>{% block title %} Symblog {% endblock %} </title>
+    <!--[if lte IE 7]>
+    <script src='https://code.google.com/archive/p/ie7-js'></script>
+    <![endif]-->
+
+
+    {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/css?family=Irish+Grover" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
+        <link href="{{ asset('css/screen.css') }}" type="text/css" rel="stylesheet" >
+
+    {% endblock %}
+
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+
+</head>
+
+<body>
+<section id="wrapper">
+    <header id="header">
+        <div class="top">
+            {% block navigation %}
+                <nav>
+                    <ul class="navigation">
+                        <li><a href ="{{ path('vutisch_blog_homepage') }}">Home</a></li>
+                        <li><a href ="{{ path('vutisch_blog_about') }}">About</a></li>
+                        <li><a href ={{ path('vutisch_blog_contact') }}>Contact</a></li>
+                    </ul>
+                 </nav>
+            {% endblock %}
+        </div>
+
+        <hgroup>
+            <h2>{% block blog_title %}<a href="{{ path('vutisch_blog_homepage') }}">Symblog</a>{% endblock %}</h2>
+            <h3>{% block blog_tagline %}<a href="{{ path('vutisch_blog_homepage') }}">creating a blog in Symfony3.4</a>{% endblock %}</h3>
+        </hgroup>
+
+
+    </header>
+    <section class="main-col">
+        {% block body %}{% endblock %}
+    </section>
+    <aside class="sidebar">
+        {% block sidebar %}{% endblock %}
+    </aside>
+
+
+<div id="footer">
+    {% block footer %}
+        Symfony3.4 blog tutorial - created by <a href="https://github.com/Vutisch">Vutisch
+    </a>
+    {% endblock %}
+</div>
+
+</section>
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

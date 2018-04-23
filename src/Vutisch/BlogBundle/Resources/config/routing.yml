@@ -1,0 +1,15 @@
+vutisch_blog_homepage:
+    path: /
+    defaults: { _controller: VutischBlogBundle:Page:index }
+
+vutisch_blog_about:
+    path:   /about
+    defaults: { _controller: VutischBlogBundle:Page:about}
+    requirements:
+    methods: GET
+
+vutisch_blog_contact:
+    path:  /contact
+    defaults: { _controller: VutischBlogBundle:Page:contact}
+    requirements:
+    methods: [GET, POST]
